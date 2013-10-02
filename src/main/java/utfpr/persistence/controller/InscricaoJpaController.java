@@ -81,7 +81,7 @@ public class InscricaoJpaController extends JpaController {
             inscricaoBD.setNome(inscricao.getNome());
             inscricaoBD.setCidade(inscricao.getCidade());
             inscricaoBD.setEstado(inscricao.getEstado());
-            inscricaoBD.setCpf(inscricao.getCpf());
+            //inscricaoBD.setCpf(inscricao.getCpf());
 
             em.getTransaction().begin();
             em.persist(inscricaoBD);

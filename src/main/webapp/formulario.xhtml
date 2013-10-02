@@ -13,22 +13,17 @@
     <ui:define name="content">
         <div class="titulo-form">FORMULÁRIO</div>
         <h:form>
-            <ace:textEntry id="cpfInput" value="" label="Número" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            <ace:textEntry id="nomeInput" value="#{inscricaoBean.inscricao.nome}" label="Nome" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
             </ace:textEntry>
             
             <br></br>
             
-            <ace:textEntry id="nomeInput" value="" label="Nome" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            <ace:textEntry id="cidadeInput" value="#{inscricaoBean.inscricao.cidade}" label="Cidade" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
             </ace:textEntry>
             
             <br></br>
             
-            <ace:textEntry id="cidadeInput" value="" label="Cidade" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
-            </ace:textEntry>
-            
-            <br></br>
-            
-            <ace:textEntry id="estadoInput" value="" label="Estado" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            <ace:textEntry id="estadoInput" value="#{inscricaoBean.inscricao.estado}" label="Estado" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
             </ace:textEntry>
             
             <br></br>

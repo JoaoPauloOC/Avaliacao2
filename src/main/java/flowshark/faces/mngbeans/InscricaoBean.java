@@ -6,7 +6,7 @@ package flowshark.faces.mngbeans;
 
 import flowshark.persistence.entity.Inscricao;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.model.ListDataModel;
 import utfpr.faces.support.PageBean;
 import utfpr.persistence.controller.InscricaoJpaController;
@@ -16,9 +16,10 @@ import utfpr.persistence.controller.InscricaoJpaController;
  * @author João Paulo
  */
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class InscricaoBean extends PageBean {
 
+    private Inscricao inscricao;
     private ListDataModel<Inscricao> inscricaoDataModel;
     
     /**
@@ -26,6 +27,14 @@ public class InscricaoBean extends PageBean {
      */
     public InscricaoBean() {
     
+    }
+
+    public Inscricao getInscricao() {
+        return inscricao;
+    }
+
+    public void setInscricao(Inscricao inscricao) {
+        this.inscricao = inscricao;
     }
     
     public ListDataModel<Inscricao> getInscricaoDataModel(){
@@ -36,7 +45,14 @@ public class InscricaoBean extends PageBean {
         return inscricaoDataModel;
     }
     
+    public String alterarAction(){
+        inscricao = inscricaoDataModel.getRowData();
+        return "formulario";
+    }
+    
     public String salvarAlteracoesAction(){
+        InscricaoJpaController ctl = new InscricaoJpaController();
+        ctl.save(inscricao);
         return "inicio";
     }
     
