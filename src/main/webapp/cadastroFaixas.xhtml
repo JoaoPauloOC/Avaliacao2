@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html" 
+                xmlns:f="http://java.sun.com/jsf/core" 
+                xmlns:c="http://java.sun.com/jsp/jstl/core" 
+                xmlns:ace="http://www.icefaces.org/icefaces/components" 
+                xmlns:ice="http://www.icesoft.com/icefaces/component" 
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./WEB-INF/templates/layout.xhtml"
+                >
+
+    <ui:define name="content">
+        <div class="titulo-form">CADASTRO DE FAIXAS</div>
+        <h:form>
+            <ace:textEntry id="codigoInput" value="#{cadastroFaixasBean.faixa.codigo}" label="Código" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            </ace:textEntry>
+            
+            <br></br>
+            
+            <ace:textEntry id="numeroInput" value="#{cadastroFaixasBean.faixa.numero}" label="Número" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            </ace:textEntry>
+            
+            <br></br>
+            
+            <ace:textEntry id="tituloInput" value="#{cadastroFaixasBean.faixa.titulo}" label="Título" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            </ace:textEntry>
+            
+            <br></br>
+            
+            <ace:textEntry id="duracaoInput" value="#{cadastroFaixasBean.faixa.duracao}" label="Duração" labelPosition="left" required="true" requiredIndicator="(*)" indicatorPosition="right">
+            </ace:textEntry>
+            
+            <br></br>
+            
+            <ice:outputText value="Artista"/><ice:selectOneMenu id="artistaInput" value="#{cadastroFaixasBean.faixa.artista.codigo}" valueChangeListener="#{cadastroFaixasBean.changeListener}" partialSubmit="true" style="width:12em" styleClass="ui-selectonemenu">
+                <f:selectItems value="#{cadastroFaixasBean.artistas}" var="i" itemValue="#{i.codigo}" itemLabel="#{i.nome}"/>
+            </ice:selectOneMenu>
+            
+            <br></br>
+            
+            <ice:outputText value="Álbum"/><ice:selectOneMenu id="albumInput" value="#{cadastroFaixasBean.faixa.album.codigo}" style="width:12em" styleClass="ui-selectonemenu">
+                <f:selectItems value="#{cadastroFaixasBean.albuns}" var="i" itemValue="#{i.codigo}" itemLabel="#{i.titulo}"/>
+            </ice:selectOneMenu>
+            
+            <br></br>
+            <br></br>
+            
+            <h:commandButton value="Salvar" action="#{cadastroFaixasBean.salvarFaixaAction}"/>
+            
+            <h:messages/>
+        </h:form>
+        <a style="float: right" href="inicio.xhtml">Página Inicial</a>
+    </ui:define>
+</ui:composition>
+

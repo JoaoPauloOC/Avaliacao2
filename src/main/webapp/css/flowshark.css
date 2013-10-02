@@ -1,0 +1,25 @@
+.titulo-form {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18pt;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.bottom_content {
+    margin-top: 20px;
+}
+
+.iceOutTxt {
+    color: blue;
+}
+
+.ui-input-label {
+    font-size: 12pt;
+    margin-right: 10px;
+}
+
+.iceOutTxt {
+    font-size: 12pt;
+    margin-right: 10px;
+}
